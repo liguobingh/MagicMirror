@@ -155,6 +155,7 @@ ext.deps = deps
 
 def addRepos(RepositoryHandler handler) {
     handler.google()
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     handler.jcenter()
     handler.maven { url "https://raw.githubusercontent.com/ViomiHome/viomi_sdk/master" }
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
