@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:padding="@dimen/dp_15"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:text="WIFI"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_24" />
+
+        <Switch
+            android:id="@+id/switch_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:switchMinWidth="@dimen/dp_46"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_track" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/wifiListview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"></ListView>
+</LinearLayout>

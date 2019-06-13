@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="wifi_conntected_status">#FF06E7D4</color>
+    <color name="wifi_unconntected_status">#ffffff</color>
+    <color name="content_bk">@android:color/background_light</color>
+
+</resources>

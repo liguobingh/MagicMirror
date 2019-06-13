@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">云米魔镜语音助手</string>
+
+    <string name="crash_text">我休息一会儿，马上回来!</string>
+
+    <string name="system_title">系统设置</string>
+    <string name="login_title">账号登录</string>
+    <string name="login_success">登录成功！</string>
+    <string name="not_login_in">未登录</string>
+    <string name="login_out">注销</string>
+    <string name="account_manager">账号管理</string>
+
+</resources>

@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+    <style name="CustomSeekBar" parent="@android:style/Widget.SeekBar">
+        <item name="android:max">100</item>
+        <item name="android:maxHeight">@dimen/dp_5</item>
+        <item name="android:minHeight">@dimen/dp_5</item>
+        <item name="android:progressDrawable">@drawable/seekbar_progress_bg</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+    </style>
+
+    <style name="MusicSeekbarStyle">
+        <item name="android:splitTrack">false</item>
+        <item name="android:max">100</item>
+        <item name="android:maxHeight">8dp</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@color/colorAccent</item>
+        <item name="android:progressDrawable">@drawable/bg_music_progress_bar</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:thumb">@drawable/music_thumb_seek_bar</item>
+    </style>
+
+    <style name="selectorDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@drawable/dialog_write_bg</item><!--背景白色，也可以设置透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+</resources>

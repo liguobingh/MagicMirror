@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="loading_width">48</integer>
+    <integer name="img_cover_corner">10</integer>
+
+    <!--<integer name="cardwidth">1080</integer>-->
+    <!--<integer name="cardheight">750</integer>-->
+    <!--<integer name="cardmargin">60</integer>-->
+    <!--<integer name="cardleftvisiblewidth">180</integer>-->
+    <!--<integer name="firstlastpadding">480</integer>-->
+
+</resources>

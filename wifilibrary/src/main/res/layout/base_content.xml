@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5">
+
+    <LinearLayout
+        android:id="@+id/Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_status" />
+
+        <TextView
+            android:id="@+id/Status_TextView"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_5"
+            android:text="@string/status_connected"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_link_speed" />
+
+        <TextView
+            android:id="@+id/LinkSpeed_TextView"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_5"
+            android:text="54Mbps"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signal" />
+
+        <TextView
+            android:id="@+id/SignalStrength_TextView"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_5"
+            android:text="Poor"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/security" />
+
+        <TextView
+            android:id="@+id/Security_TextView"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_5"
+            android:text="WEP"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/IPAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ip_address" />
+
+        <TextView
+            android:id="@+id/IPAddress_TextView"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_5"
+            android:text="192.168.0.1"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Password_TextView"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:text="@string/please_type_passphrase" />
+
+        <viomi.com.wifilibrary.wifimodel.ChangingAwareEditText
+            android:id="@+id/Password_EditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textPassword" />
+
+        <CheckBox
+            android:id="@+id/ShowPassword_CheckBox"
+            style="@style/textAppearanceBaseContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi_show_password" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,155 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "viomi.com.mojingface"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1411
+        versionName "1.4.1.1.mojing"
+
+//        versionCode 1504
+//        versionName "1.5.0.4.mojing.test"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('../viomiface')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "ACRA_ADDRESS", "\"http://39.98.87.17:9090/CrashApiReport/uploadCrashReport\""
+            buildConfigField "String", "IDEACODE_HOST", "\"http://39.98.87.17:9090/DeviceApi\""
+            buildConfigField "Boolean", "LOG_DEBUG", "true"
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField "String", "ACRA_ADDRESS", "\"http://39.98.87.17:9090/CrashApiReport/uploadCrashReport\""
+            buildConfigField "String", "IDEACODE_HOST", "\"http://39.98.87.17:9090/DeviceApi\""
+            buildConfigField "Boolean", "LOG_DEBUG", "false"
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName =  "viomiMojing_v" + defaultConfig.versionName + ".apk"
+            outputFileName = fileName
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    productFlavors {
+
+    }
+
+    lintOptions {
+        abortOnError true
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Support libraries
+    implementation deps.support.app_compat
+    implementation deps.support.v4
+    implementation deps.support.design
+    implementation deps.support.cardview
+    implementation deps.constraint_layout
+
+    api files('libs/AMap_Location_V4.4.0_20181122.jar')
+    api files('libs/oauth-xiaomiopenauth.jar')
+
+    //咪咕音乐
+    implementation(name: 'MiguAreaSDK2.1.0', ext: 'aar')
+
+    implementation project(':wifilibrary')
+    implementation project(':lrcview')
+    implementation project(':downloadlibrary')
+
+    //EXO播放器
+    implementation deps.exoplayer
+
+    //语音唤醒组件
+    implementation deps.viomi_speech
+
+    // Architecture components
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    implementation deps.room.runtime
+    annotationProcessor deps.room.compiler
+
+    // retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.adapter_rxjava
+    implementation deps.okhttp.logging_interceptor
+    implementation deps.rxjava
+    implementation deps.rx_android
+
+    implementation deps.fastjson
+    // ACRA崩溃信息收集
+    implementation deps.acra.http
+    implementation deps.acra.toast
+    //Fresco
+    implementation deps.fresco.runtime
+    implementation deps.fresco.animated_gif
+
+    // 友盟
+    implementation deps.umeng.common
+    implementation deps.umeng.analytics
+
+    // Android Testing Support Library's runner and rules
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.atsl.rules
+//    androidTestImplementation deps.room.testing
+//    androidTestImplementation deps.arch_core.testing
+
+    // Espresso UI Testing
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intents
+
+    // Resolve conflicts between main and test APK:
+    androidTestImplementation deps.support.annotations
+    androidTestImplementation deps.support.v4
+    androidTestImplementation deps.support.app_compat
+    androidTestImplementation deps.support.design
+
+    // APM性能监控组件
+    implementation "com.viomi.apm:viomi-apm-lib:1.0.0.3"
+}

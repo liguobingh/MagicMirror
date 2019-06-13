@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="snarkbar_warm_bg_color">#F44C31</color>
+    <color name="contentsquare_title_color">#0060FF</color>
+    <color name="btn_blue">#1fade6</color>
+
+    <color name="mySystemTheme">#FF06E7D4</color>
+    <color name="color_ce">#CECECE</color>
+
+    <color name="progress_bar_bg">#4c4c4c</color>
+
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contentPanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_10"
+        android:layout_alignParentBottom="true">
+
+        <SeekBar
+            android:id="@+id/music_progress"
+            style="@style/MusicSeekbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/time_progress_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="@dimen/dp_12"
+            android:text="00:00/00:00"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/music_progress" />
+
+        <ImageView
+            android:id="@+id/play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@mipmap/icon_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/music_progress" />
+
+        <ImageView
+            android:id="@+id/pre_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_50"
+            android:src="@mipmap/icon_pre"
+            android:padding="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/play_btn"
+            app:layout_constraintTop_toBottomOf="@+id/music_progress" />
+
+        <ImageView
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:src="@mipmap/icon_next"
+            android:padding="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/play_btn"
+            app:layout_constraintTop_toBottomOf="@+id/music_progress" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/migumusic_bg"
+        android:layout_above="@id/bottom_layout">
+
+        <include
+            android:id="@+id/title_layout"
+            layout="@layout/title_layout" />
+
+        <ImageView
+            android:id="@+id/img_cover"
+            android:layout_width="@dimen/dp_210"
+            android:layout_height="@dimen/dp_210"
+            android:layout_marginStart="50dp"
+            android:src="@mipmap/img_cover_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/title_layout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/music_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="歌曲名"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintLeft_toRightOf="@id/img_cover"
+            app:layout_constraintTop_toBottomOf="@id/title_layout"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/singer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="歌手"
+            android:textColor="#808080"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintLeft_toRightOf="@id/img_cover"
+            app:layout_constraintTop_toBottomOf="@id/music_title"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <me.wcy.lrcview.LrcView
+            android:id="@+id/lrc_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@id/img_cover"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/singer"
+            app:layout_constraintVertical_bias="0.0"
+            app:lrcAnimationDuration="1000"
+            app:lrcCurrentTextColor="@color/white"
+            app:lrcDividerHeight="@dimen/dp_20"
+            app:lrcLabelGravity="left"
+            app:lrcNormalTextColor="#808080"
+            app:lrcTextSize="@dimen/sp_16"
+            app:lrcTimeTextColor="#BDBDBD"
+            app:lrcTimelineColor="#80BDBDBD"
+            app:lrcTimelineTextColor="#9FA8DA"
+            app:lrcTextGravity="left"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/lrc_tips"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:text="歌曲加载中..."
+            android:textColor="#808080"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toRightOf="@id/img_cover"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/singer"
+            app:layout_constraintVertical_bias="0.0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

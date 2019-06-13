@@ -1,0 +1,167 @@
+
+ext.deps = [:]
+def versions = [:]
+//versions.multidex = "2.0.0+"
+versions.arch_core = "2.0.0"
+versions.room = "2.1.0-alpha03"
+versions.lifecycle = "2.0.0"
+versions.support = "1.0.0"
+versions.dagger = "2.16"
+versions.junit = "4.12"
+versions.espresso = "3.1.0-alpha4"
+versions.retrofit = "2.3.0"
+versions.okhttp = "3.9.0"
+versions.okhttp_logging_interceptor = "3.9.0"
+versions.mockwebserver = "3.8.1"
+versions.apache_commons = "2.5"
+versions.mockito = "2.7.19"
+versions.mockito_all = "1.10.19"
+versions.mockito_android = "2.22.0"
+versions.dexmaker = "2.2.0"
+versions.constraint_layout = "2.0.0-alpha2"
+versions.glide = "4.8.0"
+versions.fresco = "0.12.0"
+versions.viomi_speech = "1.1.5"
+versions.timber = "4.5.1"
+versions.android_gradle_plugin = "3.2.0"
+versions.rxjava = "1.2.1"
+versions.rx_android = "1.2.1"
+//versions.rxjava2 = "2.1.3"
+versions.rx_android2 = "2.0.1"
+versions.atsl_runner = "1.1.0-alpha4"
+versions.atsl_rules = "1.1.0-alpha4"
+versions.hamcrest = "1.3"
+versions.fastjson = "1.2.31"
+versions.converter_fastjson = "2.1.0"
+//versions.kotlin = "1.3.0"
+versions.paging = "2.1.0-rc01"
+versions.navigation = "1.0.0-alpha10"
+versions.work = "1.0.0-beta01"
+versions.acra = "5.0.0"
+versions.exoplayer = "2.6.1"
+versions.umeng_common = "1.5.0"
+versions.umeng_analytics = "7.5.0"
+def deps = [:]
+
+def support = [:]
+support.annotations = "androidx.annotation:annotation:$versions.support"
+support.app_compat = "androidx.appcompat:appcompat:$versions.support"
+support.recyclerview = "androidx.recyclerview:recyclerview:$versions.support"
+support.cardview = "androidx.cardview:cardview:$versions.support"
+support.design = "com.google.android.material:material:$versions.support"
+support.v4 = "androidx.legacy:legacy-support-v4:$versions.support"
+support.core_utils = "androidx.legacy:legacy-support-core-utils:$versions.support"
+deps.support = support
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.rxjava2 = "androidx.room:room-rxjava2:$versions.room"
+room.testing = "androidx.room:room-testing:$versions.room"
+deps.room = room
+
+def lifecycle = [:]
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def arch_core = [:]
+arch_core.testing = "androidx.arch.core:core-testing:$versions.arch_core"
+deps.arch_core = arch_core
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.converter_fastjson = "org.ligboy.retrofit2:converter-fastjson-android:$versions.converter_fastjson"
+retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+retrofit.adapter_rxjava = "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit"
+deps.retrofit = retrofit
+
+def okhttp = [:]
+okhttp.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.okhttp = okhttp
+
+def espresso = [:]
+espresso.core = "androidx.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "androidx.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "androidx.test.espresso:espresso-intents:$versions.espresso"
+deps.espresso = espresso
+
+def atsl = [:]
+atsl.runner = "androidx.test:runner:$versions.atsl_runner"
+atsl.rules = "androidx.test:rules:$versions.atsl_runner"
+deps.atsl = atsl
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+mockito.android = "org.mockito:mockito-android:$versions.mockito_android"
+deps.mockito = mockito
+
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
+
+def fresco = [:]
+fresco.runtime = "com.facebook.fresco:fresco:$versions.fresco"
+fresco.animated_gif = "com.facebook.fresco:animated-gif:$versions.fresco"
+deps.fresco = fresco
+
+def acra = [:]
+acra.http = "ch.acra:acra-http:$versions.acra"
+acra.toast = "ch.acra:acra-toast:$versions.acra"
+deps.acra = acra
+
+def umeng = [:]
+umeng.common = "com.umeng.sdk:common:$versions.umeng_common"
+umeng.analytics = "com.umeng.sdk:analytics:$versions.umeng_analytics"
+deps.umeng = umeng
+
+deps.fastjson = "com.alibaba:fastjson:$versions.fastjson"
+//deps.multidex = "androidx.multidex:multidex:$versions.multidex"
+deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
+deps.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+deps.viomi_speech = "com.viomi.speech:viomi-speech-lib:$versions.viomi_speech"
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+deps.junit = "junit:junit:$versions.junit"
+deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
+deps.rxjava = "io.reactivex:rxjava:$versions.rxjava"
+deps.rx_android = "io.reactivex:rxandroid:$versions.rx_android"
+//deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
+//deps.rx_android2 = "io.reactivex.rxjava2:rxandroid:$versions.rx_android2"
+deps.exoplayer = "com.google.android.exoplayer:exoplayer:$versions.exoplayer"
+deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.min_sdk = 21
+build_versions.target_sdk = 28
+build_versions.build_tools = "28.0.3"
+ext.build_versions = build_versions
+
+def work = [:]
+work.runtime = "android.arch.work:work-runtime:$versions.work"
+work.testing = "android.arch.work:work-testing:$versions.work"
+work.firebase = "android.arch.work:work-firebase:$versions.work"
+work.runtime_ktx = "android.arch.work:work-runtime-ktx:$versions.work"
+deps.work = work
+
+ext.deps = deps
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url "https://raw.githubusercontent.com/ViomiHome/viomi_sdk/master" }
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    handler.maven { url 'https://jitpack.io' }
+    handler.maven { url 'https://raw.githubusercontent.com/MiEcosystem/mijiaSDK/stable3.0/repository' }
+    handler.flatDir {
+        dirs 'libs', '../module_viomi_speech/libs'
+    }
+}
+ext.addRepos = this.&addRepos

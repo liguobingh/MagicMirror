@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_layout" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_597"
+        android:layout_height="@dimen/dp_221"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/login_guide_2" />
+
+    <TextView
+        android:id="@+id/how_to_down"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:gravity="center_vertical"
+        android:text="如何下载？"
+        android:textColor="#00abd9"
+        android:textSize="@dimen/sp_15" />
+
+</RelativeLayout>

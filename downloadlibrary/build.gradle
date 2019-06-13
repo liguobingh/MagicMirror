@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+	compileSdkVersion build_versions.target_sdk
+	buildToolsVersion build_versions.build_tools
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles 'proguard-rules.pro'
+		}
+	}
+}
+
+dependencies {
+
+	implementation deps.okhttp.runtime
+	implementation deps.okhttp.logging_interceptor
+	implementation deps.support.annotations
+
+}
