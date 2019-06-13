@@ -156,11 +156,11 @@ ext.deps = deps
 def addRepos(RepositoryHandler handler) {
     handler.google()
     handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-    handler.jcenter()
     handler.maven { url "https://raw.githubusercontent.com/ViomiHome/viomi_sdk/master" }
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     handler.maven { url 'https://jitpack.io' }
     handler.maven { url 'https://raw.githubusercontent.com/MiEcosystem/mijiaSDK/stable3.0/repository' }
+    handler.jcenter()
     handler.flatDir {
         dirs 'libs', '../module_viomi_speech/libs'
     }
