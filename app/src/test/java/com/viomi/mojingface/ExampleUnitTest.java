@@ -1,4 +1,3 @@
-package viomi.com.mojingface;
 
 import org.junit.Test;
 

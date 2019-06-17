@@ -150,6 +150,8 @@ dependencies {
     androidTestImplementation deps.support.app_compat
     androidTestImplementation deps.support.design
 
+    testImplementation 'junit:junit:4.12'
+
     // APM性能监控组件
     implementation "com.viomi.apm:viomi-apm-lib:1.0.0.3"
 }
